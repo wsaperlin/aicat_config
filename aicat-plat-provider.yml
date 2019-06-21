@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active:
+    - dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: AICAT_PLAT
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8001/eureka
+  instance:
+    prefer-ip-address: true
+server:
+  port: 9001
+
+
+---
+spring:
+  profiles: test
+  application:
+    name: AICAT_PLAT_TEST
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8001/eureka
+  instance:
+    prefer-ip-address: true
+server:
+  port: 9002
